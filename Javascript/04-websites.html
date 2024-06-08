@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--Comment時常弄錯？以下含ＨTML 和 CSS和JavaScript comment的區別 -->
+<!-- This is HTML comment  -->
+
+
+<html> 
+  <head> <!--Everyting not visible on the page goes to this-->
+    <title>HTML CSS Review</title> <!--Title 是指網頁上Tab所出現的字-->
+    <style> /* <style>這個tag能讓在html裡運行CSS代碼 */ 
+    
+    /* This is the comment form used in CSS & JavaScript */
+
+      .red-button{
+      background-color: red;
+      color: white;
+      border:none;
+      }
+      .yellow-button{
+      background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body> <!-- <body> tag contains everything that is visible on the page. like <button> and <p> and <h1> -->
+    <button title="Good job" class="red-button" onclick="
+      alert('Good job!');  
+      "> <!--Onclick 這個tag能夠讓你在“”裡寫JavaScript-->
+      hello 
+    </button>
+    <p>
+      paragraph of<button class="yellow-button">hello</button>text
+    </p>
+
+    <script> /* <script>這個tag能夠讓HTML運行JavaScript */
+    //
+    //alert('hello')
+    /*  ^^ commenting out the code -- when you don't want to run the code, only for information purpose. */
+
+    console.log(2+2);
+    console.log('Some'+' text');
+    </script>
+  </body>
+</html>

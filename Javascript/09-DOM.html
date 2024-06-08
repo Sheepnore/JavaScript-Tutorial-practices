@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <button>hello</button>
+  <button class="js-button">Second button</button>
+
+  <script>
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML = 'Changed';
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+    /*console.log(document.title);
+    document.title = 'Changed';
+
+     // This gets the body HTML element and put it inside our JS. !!! We can have HTMl elements inside JavaScript !!! 
+    // DOM combines JS and HTML together
+
+    console.log(document.body.innerHTML) // document -- the file, body -- inside the body, innerHTML -- everything inside body. This code gives us access to all the HTML inside body
+
+    document.body.innerHTML = '<button>Great Job!</button>';
+    */
+
+    /*
+    document.body.innerHTML = ('hello'); // `document` is a built-in object, `body` is a property (also an object) inside `document`, `innerHTML` is a property inside `body`
+    documen.title = 'Good job'; */
+  </script>  
+</body>
+
+</html>

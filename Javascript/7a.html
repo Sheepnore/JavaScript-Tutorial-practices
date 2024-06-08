@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    greet();
+
+    function greet(name){
+      if (!name){
+        console.log('hi there!')
+      }
+      else{
+        console.log(`hello, my name is ${name}`)
+      }
+    };
+
+    convertTemerature(30,'F');
+    function convertTemerature(degree,unit){
+
+      if (unit === 'F'){
+        Fa = (degree*9/5)+32;
+        console.log(Fa)
+      }
+      else if (unit ==='C'){
+        Ce = (degree-32)*5/9;
+        console.log(Ce)
+      }
+      else{
+        console.log(`wrong`)
+      }
+    }
+  </script>
+</body>
+</html>

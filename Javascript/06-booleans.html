@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html> 
+  <head> 
+    <title>Boolean</title> 
+
+  </head>
+
+  <body> 
+    <script>
+    true
+    false
+    console.log(3>5-5); /* '>,<,=' comparison operator是較低的順序, 若有'+,-,*,/'則優先進行運算。 -> 3>0, -> true */
+
+    console.log(5=='5.00'); /* '=='This operator convert the number and string into the same type. '5.00' is converted in number and compared with 5. The result of this code is true. */
+    console.log(5==='5.00'); /* On the other hand, '===' this operator means equal to, it doesn't convert the string into number, so the result of this code is false. '===' is more commonly used than '=='.
+    
+    '!===' means not equal to.
+    */
+    if (true){
+      console.log('Hello');
+    }
+    else{
+    }
+
+    if (30>=16){
+    }
+
+    if (0){
+      console.log('truthly')
+    }
+      /*  Falsy value: false, 0, '', NaN, undefined, null
+          Any value not on this list is truthly value      */ 
+
+    true ? 'truthly': 'falsy'
+
+    /*Shortcuts for if-statements (ternary, guard, default) */
+
+    /*Ternary operator ?:   acts as a if-statement shortcut */
+    const result = 0 ? 'truthly':'falsy'
+    console.log(result);
+
+    /* Guard operator &&: false && values, act as a if-statement shortcut */ 
+    false && console.log('hello'); /*does not run the code on the right. */
+
+    const message = 5 && 'hello';
+    console.log(message);
+
+    /* Default operator (OR operator) || */
+    const currency = undefined || 'USD';
+    console.log(currency);
+    </script>
+  </body>
+</html>

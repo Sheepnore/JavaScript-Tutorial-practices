@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="console.log(`Cart Quantity: ${quantity}`);">Show Quantity</button>
+    <button onclick="(quantity==10)?console.log('The cart is full'):quantity+=1;console.log(`Cart Quantity: ${quantity};`)">Add to cart</button>
+    <button onclick="(quantity>=9)?alert('You can only have 10 items in the cart'):quantity+=2;console.log(`Cart Quantity: ${quantity};`)">+2</button>
+    <button onclick="(quantity>=8)?alert('You can only have 10 items in the cart'):quantity+=3;console.log(`Cart Quantity: ${quantity};`)">+3</button>
+    <button onclick="(quantity>=7)?alert('You can only have 10 items in the cart'):quantity+=4;console.log(`Cart Quantity: ${quantity};`)">+4</button>
+    <button onclick="(quantity>=6)?alert('You can only have 10 items in the cart'):quantity+=5;console.log(`Cart Quantity: ${quantity};`)">+5</button>
+    <button onclick="quantity=0;console.log(`Cart Quantity: ${quantity};`)">Reset Cart</button>
+    <button onclick="(quantity==0)?alert('Not enough items in the cart'):quantity-=1;console.log(`Cart Quantity: ${quantity};`)">Remove from cart</button>
+    <button onclick ="(quantity<=1)?alert('Not enough items in the cart'):quantity-=2;console.log(`Cart Quantity: ${quantity};`)">-2</button>
+    <button onclick="(quantity<=2)?alert('Not enough items in the cart'):quantity-=3;console.log(`Cart Quantity: ${quantity}`)">-3</button> 
+
+    
+  </body>
+
+  <script>
+    let quantity = 0;
+    
+  </script>
+</html>

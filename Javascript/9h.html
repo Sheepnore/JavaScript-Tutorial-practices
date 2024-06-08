@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="inputElement" onkeyup="typingOutOnPage()">
+  <p class="p"></p>
+  <script>
+    function typingOutOnPage(){
+      let insertValue = document.querySelector('.inputElement');
+      let textValue = insertValue.value;
+      document.querySelector('.p').innerHTML = `${textValue}`;
+    }
+  </script>
+</body>
+</html>

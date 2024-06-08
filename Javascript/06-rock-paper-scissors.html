@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html> 
+  <head> 
+    <title>Rock Paper scissors</title> 
+
+  </head>
+
+  <body> 
+    <p>Rock paper scissors</p>
+    <button onclick="
+    let randomNumber = Math.random();
+    let result='';
+    let choice='';
+    if (randomNumber>=0 && randomNumber <=1/3){
+      result='Rock'
+    }
+    else if (randomNumber>1/3 && randomNumber<=2/3){
+      result='Paper'
+    }
+    else if (randomNumber >2/3 && randomNumber<=1){
+      result='Scissors'
+    }
+    choice='Rock';
+    if (choice===result){
+      alert('Tie')
+    }
+    else if (result=='Paper'){
+      alert('You:Rock Computer: Paper, You lose.')
+    }
+    else if (result=='Scissors'){
+      alert('You:Rock, Computer:Scissors, You win.')
+    }
+    ">Rock</button>
+    <button onclick="
+    randomNumber = Math.random();
+    if (randomNumber>=0 && randomNumber <=1/3){
+      result='Rock'
+    }
+    else if (randomNumber>1/3 && randomNumber<=2/3){
+      result='Paper'
+    }
+    else if (randomNumber >2/3 && randomNumber<=1){
+      result='Scissors'
+    }
+    choice='Paper';
+    if (choice===result){
+      alert('Tie')
+    }
+    else if (result=='Scissors'){
+      alert('You: Paper, Computer: Scissors, You lose')
+    }
+    else if (result=='Rock'){
+      alert('You: Paper, Computer: Rock, You win.')
+    }
+    ">Paper</button>
+    <button onclick="
+    randomNumber = Math.random();
+    if (randomNumber>=0 && randomNumber <=1/3){
+      result='Rock'
+    }
+    else if (randomNumber>1/3 && randomNumber<=2/3){
+      result='Paper'
+    }
+    else if (randomNumber >2/3 && randomNumber<=1){
+      result='Scissors'
+    }
+    choice='Scissors';
+    if (choice===result){
+      alert('Tie')
+    }
+    else if (result=='Rock'){
+      alert('You: Scissors, Computer: Rock, You lose')
+    }
+    else if (result=='Paper'){
+      alert('You: Scissors, Computer: Paper, You win')
+    }
+    ">Scissors</button>
+    <script>
+    
+    </script>
+  </body>
+</html>

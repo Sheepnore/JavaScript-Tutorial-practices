@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="displayCartQuantity()">Show Quantity</button>
+    <button onclick="(quantity==10)?document.querySelector('.p').innerHTML='The cart is full':quantity+=1;displayCartQuantity()">Add to cart</button>
+    <button onclick="(quantity>=9)?maxOut():quantity+=2;displayCartQuantity();">+2</button>
+    <button onclick="(quantity>=8)?maxOut():quantity+=3;displayCartQuantity();">+3</button>
+    <button onclick="(quantity>=7)?maxOut():quantity+=4;displayCartQuantity()">+4</button>
+    <button onclick="(quantity>=6)?maxOut():quantity+=5;displayCartQuantity()">+5</button>
+    <button onclick="quantity=0;displayCartQuantity()">Reset Cart</button>
+    <button onclick="(quantity==0)?notEnough():quantity-=1;displayCartQuantity()">Remove from cart</button>
+    <button onclick ="(quantity<=1)?notEnough():quantity-=2;displayCartQuantity()">-2</button>
+    <button onclick="(quantity<=2)?notEnough():quantity-=3;displayCartQuantity()">-3</button> 
+    <p class="p"></p>
+    <p class="belowP"></p>
+    
+  </body>
+
+  <script>
+    let quantity = 0;
+    let textInParagraph;
+    function notEnough(){
+      textInParagraph = document.querySelector('.belowP');
+      textInParagraph.innerText = 'Not enough items in the cart';
+    }
+    function maxOut(){
+      textInParagraph = document.querySelector('.belowP');
+      textInParagraph.innerText = 'You can only have 10 items in the cart';
+    }
+    function displayCartQuantity(){
+      textInParagraph = document.querySelector('.p');
+      textInParagraph.innerHTML = `Cart Quantity: ${quantity};`
+    }
+  </script>
+</html>

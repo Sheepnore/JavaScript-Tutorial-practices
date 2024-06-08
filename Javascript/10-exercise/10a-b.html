@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .amazon-button{
+      background-color: rgb(255, 216, 20);
+      columns: black;
+      border-radius: 20px;
+      padding:7px 20px;
+      border:none;
+      font-size: 20;
+      cursor: pointer;
+      text-align: center;
+    }
+    .uber-request{
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border:none;
+      border-radius: 10px; 
+      padding:13px 17px ;
+      cursor: pointer;
+    }
+    .is-Added{
+      background-color: rgb(225, 225, 225);
+      color: black;
+    }
+
+    .is-Requested{
+      background-color: rgb(234, 233, 233);
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button class="amazon-button" onclick="addedToCart()">Add to Cart</button>
+  <button class="uber-request" onclick="uberButtonRequested()">Request now</button>
+  <button class="uber-schedule-for-later">Schedule for later</button>
+
+  <script>
+    function addedToCart(){
+      const amazonButton = document.querySelector('.amazon-button')
+      if (amazonButton.innerHTML === 'Add to Cart'){
+        amazonButton.innerHTML = 'Added';
+        amazonButton.classList.add('is-Added');
+      }
+      else{
+        amazonButton.innerHTML = 'Add to Cart';
+        amazonButton.classList.remove('is-Added');
+      }
+    }
+    function uberButtonRequested(){
+      const uberElement = document.querySelector('.uber-request')
+      if (uberElement.innerHTML === 'Request now'){
+        uberElement.innerHTML = 'Requested';
+        uberElement.classList.add('is-Requested');
+      }
+      else{
+        uberElement.innerHTML = 'Request now';
+        uberElement.classList.remove('is-Requested');
+      }
+    }
+  </script>
+</body>
+</html>

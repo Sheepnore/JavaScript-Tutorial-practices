@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html> 
+  <head> 
+    <title>Functions</title> 
+  </head>
+
+  <body> 
+    <p>Rock paper scissors</p>
+    <button onclick="
+    playGame('rock');
+    ">Rock</button>
+    <button onclick="
+    playGame('paper');
+    ">Paper</button>
+    <button onclick="
+    playGame('scissors');
+    ">Scissors</button>
+
+    <script>
+    let choice='';
+    function pickComputerMove(){
+      let result='';
+      let randomNumber = Math.random();
+      if (randomNumber>=0 && randomNumber <=1/3){
+        result='rock'
+      }
+      else if (randomNumber>1/3 && randomNumber<=2/3){
+        result='paper'
+      }
+      else if (randomNumber >2/3 && randomNumber<=1){
+        result='scissors'
+      }
+      return result;
+      };
+
+    function playGame(choice){
+      const result = pickComputerMove();
+
+      if (choice ==='rock'){
+        if (choice===result){
+          alert('Tie')
+        }
+        else if (result=='paper'){
+          alert('You:Rock Computer: Paper, You lose.')
+        }
+        else if (result=='scissors'){
+          alert('You:Rock, Computer:Scissors, You win.')
+        }
+      }
+
+      else if (choice ==='scissors'){
+        if (choice===result){
+          alert('Tie')
+        }
+        else if (result=='rock'){
+          alert('You: Scissors, Computer: Rock, You lose')
+        }
+        else if (result=='raper'){
+          alert('You: Scissors, Computer: Paper, You win')
+        }
+      }
+      
+      else if (choice ==='paper'){
+        if (choice===result){
+          alert('Tie')
+        }
+        else if (result=='Rock'){
+          alert('You: Scissors, Computer: Rock, You lose')
+        }
+        else if (result=='Paper'){
+          alert('You: Scissors, Computer: Paper, You win')
+        }
+      }
+    }
+
+    </script>
+  </body>
+</html>
+
+    
+    </script>
+  </body>
+
+</html>

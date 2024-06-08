@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    
+      <button onclick="guess = 'heads';playGame()">heads</button>
+      <button onclick="guess = 'tails';playGame()">tails</button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+          win:0,
+          lose:0,
+        }
+      function computerMove(){
+       const randomNumber = Math.random();
+       const compMove = randomNumber < 0.5 ? 'heads' : 'tails'; // If the number is less than 0.5, then it's head. Otherwise it's tails 
+       return compMove;
+      }
+
+      function playGame(){
+        
+        if (guess === computerMove()){
+          console.log('You win!')
+          score.win += 1;
+        }
+        else {
+          console.log('You lose')
+          score.lose += 1;
+        }
+
+        localStorage.setItem('score',JSON.stringify(score));
+        console.log(`Win: ${score.win}, Lose:${score.lose}`);
+      }
+
+    </script>
+  </body>
+</html>
