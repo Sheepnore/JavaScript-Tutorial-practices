@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html> 
+  <head> 
+    <title>Functions</title> 
+    <link rel="stylesheet" href="styles/12-rock-paper-scissors.css"> <!-- `rel` == relation, `stylesheet` == we're loading a css file, -->
+  </head>
+
+  <body> 
+    <p class="title">Rock paper scissors</p>
+    <button class="move-button js-rock-button"><img src="img/rock-Emoji.png" class="move-icon"></button>
+    <button onclick="
+    playGame('paper');
+    " class="move-button"><img src="img/paper-Emoji.png" class="move-icon"></button>
+    <button onclick="
+    playGame('scissors');
+    " class="move-button"><img src="img/scissors-Emoji.png" class="move-icon"></button>
+
+    <p class="gameResult result">
+    </p>
+    <p class="gameScore score">
+    </p>
+
+    <button onclick="
+    score.playerWin=0;
+    score.computerWin=0;
+    score.tie=0;
+    localStorage.removeItem('score')
+    resetText();
+    " class="reset-score-button">Reset score</button>
+    
+    <button class="auto-play-button"
+    onclick="autoPlay();
+    ">Auto Play</button>
+
+    <script src="script/12-rock-paper-scissors.js">
+    </script>
+  </body>
+</html>
+
+    
+    </script>
+  </body>
+
+</html>

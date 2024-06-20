@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <button class="js-add" onclick="
+  message ++;
+  titleChanged();
+  ">Add</button>
+  <button class="js-remove" onclick="
+
+  if (message>0){
+    message --;
+
+    if (message===0){
+      stopAlertMessage();
+    }
+  }
+  ">Remove</button>
+</head>
+
+<body>
+  <script>
+    let message = 2;
+    let isDisplaying;
+    let toggle = true;
+    titleChanged();
+
+    function titleChanged(){
+      
+      if (isDisplaying){
+        return
+      }
+
+      isDisplaying = true;
+
+
+      intervalId = setInterval(function(){
+      
+        if (document.title ==='App'){
+          document.title = `(${message}) New message`
+        }
+        else{
+          document.title = 'App';
+        }
+      },1000)
+
+    } 
+
+    function stopAlertMessage(){
+      isDisplaying = false;
+      
+      clearInterval(intervalId);
+      document.title = 'App';
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11n</title>
+</head>
+<body>
+  <script>
+
+    function countWords(words){
+      let object = {};
+      for (let i =0;i<words.length;i++){
+        const word = words[i];
+        if (!object[word]){
+          object[word] =1; // 新增屬性, 
+                           // e.g. object['cat'] = 'animal' -- 新增一個`cat` property, assign `animal` as value.  
+        }
+        else{
+          object[word]++;
+        }
+    }
+    return object
+  }
+  console.log(countWords(['apple','apple','grape','apple']))
+  </script>
+</body>
+</html>

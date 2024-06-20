@@ -1,4 +1,4 @@
-const todoThings = [{ // 
+const todoThings = JSON.parse(localStorage.getItem('todolist')) || [{ 
   name:'make dinner',
   dueDate:'2022-12-22'
 },{
@@ -25,13 +25,18 @@ function addToDo (){
   inputElement.value= '';
 
   renderTodoList();
+
+  saveToStorage();
 }
 
 function renderTodoList(){  //把addTodo()裡的Js code 變成html 
 let todoListHTML = '';
   
-  todoThings.forEach((todoObject,i)=>{
-    
+  for (let i=0;i<todoThings.length;i++){
+    const todoObject = todoThings[i];
+    //const name = todoObject.name;
+    //const dueDate = todoObject.dueDate;
+    //const { name } = todoObject
     const  { name, dueDate } = todoObject
     const html = 
     `<div>${name}</div>
@@ -43,8 +48,10 @@ let todoListHTML = '';
     `;
     todoListHTML += html;
   }
-  )
-  
 
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 } 
+
+function saveToStorage(){
+  localStorage.setItem('todoThings',JSON.stringify(todoThings));
+}
