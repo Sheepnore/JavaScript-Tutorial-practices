@@ -85,16 +85,13 @@
     document.querySelector('.gameResult').innerHTML = (`Win: ${score.playerWin} Lose: ${score.computerWin} Tie:${score.tie}`)
    };
 
-   let isAutoPlaying = false;
-   let intervalId;
+let isAutoPlaying = false;
+let intervalId;
 
-
-   //const autoPlay = () => {
-   //}
-
-   function autoPlay(){
-    console.log(isAutoPlaying);
+  function autoPlay(){
+    const text = document.querySelector('.auto-play-button');
     if (!isAutoPlaying){
+      text.innerText = 'Stop Playing'
       intervalId = setInterval(() => {
         const playerMove = pickComputerMove();
         playGame(playerMove);
@@ -105,8 +102,15 @@
     } else {
       clearInterval(intervalId);
       isAutoPlaying = false;
+      text.innerText = 'Auto Play'
     }
    }
+
+   document.querySelector('.auto-play-button')
+   .addEventListener('click',()=>{
+    autoPlay();
+   })
+    
 
    document.querySelector('.js-rock-button')  
    .addEventListener('click', ()=>{    // addEventListner('click', playGame('rock')) - this does not work. playGame('rock') will return `undefined`. Instead, create a narrow function that contains PlayGame('rock')
@@ -138,8 +142,43 @@
     else if (event.key === 's'){
       playGame('scissors');
     }
+    else if (event.key === 'a'){
+      autoPlay();
+    }
+    else if (event.key === 'Backspace'){
+      resetScore();
+    }
    }) 
-   function playGameByKeydown(event){
-    
+
+   let confirmHTML = '';
+   function resetScore(){
+    const html = `
+    <p>Are you sure you want to reset the score? </p>
+    <button class='confirm-yes'>Yes</button>
+    <button class='confirm-no'>No</button>
+    `
+    confirmHTML += html
+
+    let confirmMessage = document.querySelector('.confirm');
+    confirmMessage.innerHTML = confirmHTML;
+
+    document.querySelector('.confirm-yes').addEventListener('click',()=>{
+      score.playerWin=0;
+      score.computerWin=0;
+      score.tie=0;
+      localStorage.removeItem('score')
+      resetText();
+      confirmHTML = ''; confirmMessage.innerHTML = '';
+    })
+    document.querySelector('.confirm-no').addEventListener('click',()=>{
+      confirmHTML = ''; confirmMessage.innerHTML = '';
+    })
    }
+
+   document.querySelector('.reset-score-button')
+    .addEventListener('click',()=>{
+      resetScore();
+    })
+
+  
 

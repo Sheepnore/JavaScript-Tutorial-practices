@@ -5,27 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <button class="start-changed-button" onclick="
-    loading();
-    console.log(document.querySelector('.start-changed-button').innerText)
-
-    setTimeout(function(){
-      const text_changed_button = document.querySelector('.start-changed-button');
-      if (text_changed_button.innerText == 'Loading'){
-        text_changed_button.innerText = 'Finished';
-      }
-      else if (text_changed_button.innerText == 'Undoing'){
-        text_changed_button.innerText = 'Start';
-      }
-    },1000);
-    ">Start</button>
-
-  <button 
-    class="add-to-cart"
-    onclick="
-    DisplayMessage();
-    "
-   >Add to Cart</button>
+  <button class="start-changed-button">Start</button>
+  <button class="add-to-cart">Add to Cart</button>
   <div>
     <p class="added-text">
     </p>
@@ -33,7 +14,7 @@
 </head>
 <body>
   <script>
-    const add = function(){
+    const add = ()=>{
       console.log(2+3);
     }
 
@@ -49,8 +30,7 @@
       console.log('12b');
     })
 
-    function loading(){
-
+    document.querySelector('.start-changed-button').addEventListener('click',()=>{
       const text = document.querySelector('.start-changed-button');
       if (text.innerText == 'Start'){
       text.innerText = 'Loading';
@@ -58,23 +38,34 @@
       else if (text.innerText == 'Finished'){
         text.innerText = 'Undoing';
       }
-    }
+
+      setTimeout(()=>{
+      const text_changed_button = document.querySelector('.start-changed-button');
+      if (text_changed_button.innerText == 'Loading'){
+        text_changed_button.innerText = 'Finished';
+      }
+      else if (text_changed_button.innerText == 'Undoing'){
+        text_changed_button.innerText = 'Start';
+      }
+    },1000);
+    })
     
     
 
     let timeoutId;
-    function DisplayMessage(){
-
+    document.querySelector('.add-to-cart').addEventListener('click',()=>{
       const textInP = document.querySelector('.added-text');
       textInP.innerText='Added'; // text -> 'Added'
 
       clearTimeout(timeoutId); // cancel the previous timeout 
 
-      timeoutId = setTimeout(function(){
+      timeoutId = setTimeout(()=>{
       console.log(timeoutId);
       textInP.innerText = '';
-    },2000)
-    }
+    },2000);
+    })
+      
+    
 
 
     
