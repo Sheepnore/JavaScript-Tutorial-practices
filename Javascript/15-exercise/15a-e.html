@@ -1,54 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script type="module">
-    import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+<html>
+  <head></head>
+  <body>
+    <script type="module">
+      import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+      import isWeekend from './15f.js'
 
-    /*let today = dayjs();
-    let fiveDaysAfter = today.add(5,'days');
-    console.log(fiveDaysAfter)
+      // Test this function using a few different dates.
+      let date = dayjs();
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
 
-    let aMonthAfter = today.add(1,'months')
-    console.log(aMonthAfter);
+      date = dayjs().add(2, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
 
-    let aMonthBefore = today.subtract(1,'months');
-    console.log(aMonthBefore);
+      date = dayjs().add(4, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
 
-    //console.log(today.format('dddd')); 
-    
-
-    const x = aMonthBefore.$d.getDate();
-    console.log(x);
-    */
-
-    function isWeekend(date){
-      const dayOfWeek = date.format('dddd');
-      return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday'
-    }
-    
-
-    let date = dayjs();
-    console.log(date.format('dddd,MMMM D'));
-    console.log(isWeekend(date));
-
-    date = dayjs().add(5,'days');
-    console.log(date.format('dddd,MMMM D'));
-    console.log(isWeekend(date));
-
-    date = dayjs().add(4,'days');
-    console.log(date.format('dddd,MMMM D'));
-    console.log(isWeekend(date));
-
-    date = dayjs().add(3,'days');
-    console.log(date.format('dddd,MMMM D'));
-    console.log(isWeekend(date));
-
-
-  </script>
-</body>
+      date = dayjs().add(6, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+    </script>
+  </body>
 </html>
